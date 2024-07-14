@@ -1,173 +1,189 @@
 :root {
-    --background-color: #ffffff;
-    --default-color: #364d59;
-    --heading-color: #52565e;
-    --accent-color: #feb900;
-    --contrast-color: #ffffff;
+  --background-color: #ffffff;
+  --default-color: #364d59;
+  --heading-color: #52565e;
+  --accent-color: #feb900;
+  --contrast-color: #ffffff;
+
+  --nav-background-color: rgba(255, 255, 255, 0.9);
+  --nav-color: #e2e2e2;
+  --nav-hover-color: #feb900;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #212529;
+  --nav-dropdown-hover-color: #feb900;
+
+  --button-background-color: #000000;
+  --button-color: #ffffff;
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --default-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --accent-color: #bb86fc;
+  --contrast-color: #000000;
+
+  --nav-background-color: rgba(18, 18, 18, 0.9);
+  --nav-color: #f5f4f4;
+  --nav-hover-color: #bb86fc;
+  --nav-dropdown-background-color: #333;
+  --nav-dropdown-color: #e0e0e0;
+  --nav-dropdown-hover-color: #bb86fc;
+
+  --button-background-color: #ffffff;
+  --button-color: #000000;
   
-    --nav-background-color: rgba(255, 255, 255, 0.9);
-    --nav-color: #e2e2e2;
-    --nav-hover-color: #feb900;
-    --nav-dropdown-background-color: #ffffff;
-    --nav-dropdown-color: #212529;
-    --nav-dropdown-hover-color: #feb900;
-  
-    --button-background-color: #000000; /* Black button for light theme */
-    --button-color: #ffffff; /* White text for light theme */
-  }
-  
-  [data-theme='dark'] {
-    --background-color: #121212;
-    --default-color: #e0e0e0;
-    --heading-color: #ffffff;
-    --accent-color: #bb86fc;
-    --contrast-color: #000000;
-  
-    --nav-background-color: rgba(18, 18, 18, 0.9);
-    --nav-color: #f5f4f4;
-    --nav-hover-color: #bb86fc;
-    --nav-dropdown-background-color: #333;
-    --nav-dropdown-color: #e0e0e0;
-    --nav-dropdown-hover-color: #bb86fc;
-  
-    --button-background-color: #ffffff; /* White button for dark theme */
-    --button-color: #000000; /* Black text for dark theme */
-    
-    --contact-background-color: #1e1e1e; /* Background for contact section in dark mode */
-    --contact-text-color: #e4dcdc; /* Text color for contact section in dark mode */
-    --contact-border-color: #3a3a3a; /* Border color for inputs in contact section in dark mode */
-    --contact-placeholder-color: #757575; /* Placeholder color for inputs in contact section in dark mode */
-    --contact-focus-color: #bb86fc; /* Focus outline color for inputs in contact section in dark mode */
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--default-color);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-  }
-  
-  a {
-    color: var(--default-color);
-  }
-  
-  a:hover {
-    color: var(--accent-color);
-  }
-  
-  .navbar, .nav-item, .dropdown-menu {
-    background-color: var(--nav-background-color);
-    color: var(--nav-color);
-  }
-  
-  .nav-item:hover, .dropdown-item:hover {
-    color: var(--nav-hover-color);
-  }
-  
-  .navbar .nav-link {
-    color: var(--nav-color);
-  }
-  
-  .navbar .nav-link:hover {
-    color: var(--nav-hover-color);
-  }
-  
-  body.color-transition, .navbar.color-transition, .nav-item.color-transition, .dropdown-menu.color-transition {
-    transition: background-color 0.5s, color 0.5s;
-  }
-  
-  .button {
-    background-color: var(--button-background-color);
-    color: var(--button-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-  }
-  
-  /* Contact section styles */
-  .contact-section {
-    width: 100%;
-    max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3rem 1rem;
-    background-color: var(--contact-background-color, #ffffff); /* Fallback to white in light mode */
-    color: var(--contact-text-color, #364d59); /* Fallback to default color in light mode */
-  }
-  
-  .contact-intro > * + * {
-    margin-top: 1rem;
-  }
-  
-  .contact-title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-  }
-  
-  .contact-description {
-    color: var(--contact-text-color, rgb(107 114 128)); /* Fallback to light grey in light mode */
-  }
-  
-  .form-group-container {
-    display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-label {
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-input,
-  .form-textarea {
-    padding: 0.5rem;
-    border: 1px solid var(--contact-border-color, #e5e7eb); /* Fallback to light grey border in light mode */
-    display: flex;
-    height: 2.5rem;
-    width: 100%;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    background-color: var(--contact-background-color, #ffffff); /* Fallback to white in light mode */
-    color: var(--contact-text-color, #364d59); /* Fallback to default color in light mode */
-  }
-  
-  .form-input::placeholder,
-  .form-textarea::placeholder {
-    color: var(--contact-placeholder-color, #6b7280); /* Fallback to light grey in light mode */
-  }
-  
-  .form-input:focus-visible,
-  .form-textarea:focus-visible {
-    outline: 2px solid var(--contact-focus-color, #2563eb); /* Fallback to blue outline in light mode */
-    outline-offset: 2px;
-  }
-  
-  .form-textarea {
-    min-height: 120px;
-  }
-  
-  .form-submit {
-    width: 100%;
-    margin-top: 1.2rem;
-    background-color: #3124ca;
-    color: #fff;
-    padding: 13px 5px;
-    border-radius: 0.375rem;
-  }
-  
+  --contact-background-color: #1e1e1e;
+  --contact-text-color: #e4dcdc;
+  --contact-border-color: #3a3a3a;
+  --contact-placeholder-color: #757575;
+  --contact-focus-color: #bb86fc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  transition: color 0.5s;
+}
+
+a {
+  color: var(--default-color);
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.navbar, .nav-item, .dropdown-menu {
+  background-color: var(--nav-background-color);
+  color: var(--nav-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav-item:hover, .dropdown-item:hover {
+  color: var(--nav-hover-color);
+}
+
+.navbar .nav-link {
+  color: var(--nav-color);
+}
+
+.navbar .nav-link:hover {
+  color: var(--nav-hover-color);
+}
+
+.button {
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Contact section styles */
+.contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+  background-color: var(--contact-background-color, #ffffff);
+  color: var(--contact-text-color, #364d59);
+}
+
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.contact-description {
+  color: var(--contact-text-color, rgb(107 114 128));
+}
+
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--contact-border-color, #e5e7eb);
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: var(--contact-background-color, #ffffff);
+  color: var(--contact-text-color, #364d59);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--contact-placeholder-color, #6b7280);
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid var(--contact-focus-color, #2563eb);
+  outline-offset: 2px;
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: #3124ca;
+  color: #fff;
+  padding: 13px 5px;
+  border-radius: 0.375rem;
+}
+
+/* Transition effect */
+.transition-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  transition: clip-path 1s ease-in-out;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.color-transition .transition-cover {
+  clip-path: circle(0%);
+}
